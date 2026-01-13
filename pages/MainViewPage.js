@@ -17,7 +17,6 @@ export class MainViewPage {
     
     async navigate() {
         await this.page.goto('/');
-        await this.page.waitForLoadState('domcontentloaded');
     }
 
     async clickSignUpButton() {

@@ -3,7 +3,7 @@ export function generateUser() {
     const firstName = `First${randomLetters()}`;
     const lastName = `Last${randomLetters()}`;
     return {
-        userName: `user${String(timeStamp).slice(-5)}`,
+        userName: `user${String(timeStamp).slice(-6)}`,
         email: `user${timeStamp}@test.com`,
         password: `Test123!`,
         phoneNumber: getPhoneNumber(),

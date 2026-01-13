@@ -31,6 +31,9 @@ clarity over excessive test coverage.
 - **Utility functions** are used to centralize common operations like API calls, test data generation, and user creation, keeping the tests clean, reusable, and easy to maintain.
 - **Assertions on both UI and API** ensure that operations, especially crucial operations like deposits, succeed both on backend and the UI. 
 - **Focused test coverage** was prioritized over testing everything, to keep the suite stable, maintainable, and production-ready.
+- **Default assertion timeout:** 5 seconds
+- **Action timeout:** 30 seconds (to accommodate slower API responses and laggy UI interactions)
+- **Test execution timeout:** 90 seconds (longer timeout due to action timeout delays)
 
 ## How to Use This Repository
 1. Install Git if not already installed: https://git-scm.com/install/  
@@ -39,9 +42,15 @@ clarity over excessive test coverage.
 4. Navigate to the project folder: cd spinbet-automation
 5. Install dependencies: npm install
 6. Install Playwright browsers (needed for UI tests): npx playwright install
-7. Run all tests: npx playwright test
-8. (Optional) Run tests on only one browser: npx playwright test --project=chromium
-9. (Optional) Run a single test file: npx playwright test ./tests/userRegistration.spec.js
+
+### Running Tests and Tagging
+This project uses Playwright's `test.describe` tags along with `grep` to run subsets of tests. Scripts were added to the package.json to allow running specific test sections easily, the following were added:
+- To run all tests on all three browsers use: npm run test
+- To run registration flow tests use: npm run test:registration (this will run all registration flow tests on all browsers)
+- To run search functionality tests use: npm run test:search (this will run all search functionality tests on all browsers)
+- To run all tests on chromium use: npm run test:chromium
+- To run all tests on firefox use: npm run test:firefox
+- To run all tests on webkit use: npm run test:webkit
 
 ## Test Scope and Coverage
 
@@ -74,5 +83,6 @@ Negative scenario:
 ### Out of Scope
 - Email verification after registration
 - Payment flows beyond credit card deposit
+- Search functionality testing for Sporting events
 - Load or performance testing
 - Full regression of all visible UI elements, and their states (blank required fields etc.)

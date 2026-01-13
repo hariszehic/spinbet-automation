@@ -36,7 +36,6 @@ export class CasinoPage {
 
     async navigate() {
         await this.page.goto('/casino');
-        await this.page.waitForLoadState('domcontentloaded');
     }
 
     async clickSearchButton() {

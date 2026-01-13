@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "Test automation framework for validating Spinbet user flows on the staging website and using Playwright.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:registration": "npx playwright test --grep @registration",
+    "test:search": "npx playwright test --grep @search",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hariszehic/spinbet-automation.git"
