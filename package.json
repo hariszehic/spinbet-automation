@@ -1,0 +1,23 @@
+{
+  "name": "spinbet-automation",
+  "version": "1.0.0",
+  "description": "Test automation framework for validating Spinbet user flows on the staging website and using Playwright.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hariszehic/spinbet-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/hariszehic/spinbet-automation/issues"
+  },
+  "homepage": "https://github.com/hariszehic/spinbet-automation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.5"
+  }
+}
